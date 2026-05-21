@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coffee Store</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 id="mainTitle">Coffee Store</h1>
+        <nav>
+            <!-- Левая пустая колонка (для баланса) -->
+            <div></div>
+            <!-- Центральные ссылки -->
+            <div class="nav-links">
+                <a href="#" id="shopLink">Магазин</a>
+                <a href="#" id="favoritesLink">
+                    Избранное
+                    <span id="favCount" class="fav-count">0</span>
+                </a>
+                <a href="#" id="promosLink">Акции</a>
+                <a href="#" id="cartLink">
+                    <div>Корзина</div>
+                    <div id="cartPriceICount">
+                        <div id="cartPrice">0 ₽</div>
+                        <div><span id="cartCount">0</span><b id="cartCountText">шт</b></div>
+                    </div>
+                </a>
+            </div>
+            <!-- Правая колонка: блок пользователя -->
+            <div class="user-section">
+                {% if user.is_authenticated %}
+                <span>Привет, {{ user.username }}!</span>
+                <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="text-action">Выйти</button>
+                </form>
+                {% else %}
+                <a href="{% url 'login' %}">Войти</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <!-- SHOP PAGE -->
+    <div id="shopPage">
+        <div class="main">
+            <img id="leftCup" class="cup-preview" src="{% static 'images/cup-robusta-small.png' %}" onclick="prevCoffee()" alt="prev">
+            <img id="activeCup" class="cup-active" src="{% static 'images/cup-arabica-big.png' %}" alt="active">
+            <div class="info">
+                <h2 id="coffeeName">Arabica</h2>
+                <p id="coffeeDesc">Мягкий ароматный кофе</p>
+                <div id="priceWrapper"></div>
+            </div>
+            <img id="rightCup" class="cup-preview" src="{% static 'images/cup-liberica-small.png' %}" onclick="nextCoffee()" alt="next">
+        </div>
+
+        <div class="type-panel">
+            <div class="type-buttons">
+                <div class="type-btn" data-type="grain" onclick="selectType('grain', event)">Зерно</div>
+                <div class="type-btn" data-type="ground" onclick="selectType('ground', event)">Молотый</div>
+                <div class="type-btn" data-type="instant" onclick="selectType('instant', event)">Растворимый</div>
+            </div>
+            <div class="filters-row" id="filtersRow">
+                <div class="filter-indicator" id="filterIndicator"></div>
+            </div>
+        </div>
+
+        <div class="products-area">
+            <div class="items-grid" id="productsGrid"></div>
+        </div>
+    </div>
+
+    <!-- FAVORITES PAGE -->
+    <div id="favoritesPage" class="page">
+        <h2>Избранное</h2>
+        <div id="favoritesItems" class="items-grid"></div>
+        <div class="page-footer">
+            <div id="favSummary">Всего: 0 товаров</div>
+            <div>
+                <button type="button" class="text-action" onclick="openShop()">Вернуться в магазин</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART PAGE -->
+    <div id="cartPage" class="page">
+        <h2>Корзина</h2>
+        <div class="promo-block">
+            <input id="promoInput" class="promo-input" placeholder="Введите промокод">
+            <button type="button" class="text-action" id="promoApplyBtn">Применить</button>
+            <div id="promoMsg" class="promo-msg" style="display:none;">Промокод активирован</div>
+        </div>
+        <div id="cartItems" class="items-grid"></div>
+        <div class="page-footer">
+            <div id="totalPrice">Итого: 0 руб</div>
+            <div>
+                <button type="button" class="text-action" id="checkoutBtn" onclick="openCheckout()">Оплатить</button>
+            </div>
+        </div>
+        <div style="margin-top:14px;">
+            <button type="button" class="text-action" onclick="openShop()">← Вернуться в магазин</button>
+        </div>
+    </div>
+
+    <!-- CHECKOUT PAGE -->
+    <div id="checkoutPage" class="page">
+        <h2>Оформление заказа</h2>
+        <div class="checkout-form">
+            <h3>Данные получателя</h3>
+            <div>
+                <input type="text" id="orderName" class="promo-input" placeholder="Ваше имя" oninput="validateName()">
+                <div id="nameError" class="error-message">Заполните имя</div>
+            </div>
+            <div>
+                <input type="text" id="orderAddress" class="promo-input" placeholder="Адрес доставки" oninput="validateAddress()">
+                <div id="addressError" class="error-message">Заполните адрес</div>
+            </div>
+            <div>
+                <input type="tel" id="orderPhone" class="promo-input" placeholder="Телефон (начинается с +, только цифры)" oninput="validatePhone()">
+                <div id="phoneError" class="error-message">Неверный формат: + и только цифры</div>
+            </div>
+            <div>
+                <input type="email" id="orderEmail" class="promo-input" placeholder="Email" oninput="validateEmail()">
+                <div id="emailError" class="error-message">Введите верный email (должен содержать @)</div>
+            </div>
+        </div>
+        <div class="page-footer" style="margin-top:20px;">
+            <div></div>
+            <div>
+                <button type="button" class="text-action" onclick="submitOrder()">Подтвердить заказ</button>
+            </div>
+        </div>
+        <div style="margin-top:14px;">
+            <button type="button" class="text-action" onclick="openCart()">← Вернуться в корзину</button>
+        </div>
+    </div>
+
+    <!-- ORDER CONFIRMATION -->
+    <div id="orderConfirmation" class="page" style="display:none;">
+        <div class="confirmation-container">
+            <div class="truck-side">
+                <img class="truck-image" src="{% static 'images/truck.png' %}" alt="Грузовик доставки" onerror="this.src='{% static 'images/truck-placeholder.png' %}'">
+            </div>
+            <div class="order-details">
+                <h2>ЗАКАЗ ОТПРАВЛЕН</h2>
+                <div id="confirmationData"></div>
+                <div class="back-to-shop">
+                    <button type="button" class="text-action" onclick="backToShopFromConfirmation()">Вернуться к покупкам</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROMOS PAGE -->
+    <div id="promosPage" class="promos" style="display:none;">
+        <h2 style="text-align:center; font-size:28px; margin-bottom:10px;">Акции</h2>
+        <div class="promo-banners">
+            <img class="promo-banner" data-delay="1" id="banner1" src="{% static 'images/banner-arabica-25.png' %}" alt="Скидка 25% на Arabica" onclick="onBanner1Click()">
+            <img class="promo-banner" data-delay="2" id="banner2" src="{% static 'images/banner-1plus1.png' %}" alt="1+1 приведи друга" onclick="onBanner2Click(event)">
+            <img class="promo-banner" data-delay="3" id="banner3" src="{% static 'images/banner-promo-cart.png' %}" alt="Промокод для корзины" onclick="onBanner3Click()">
+        </div>
+        <div style="text-align:center; margin-top:20px;">
+            <button type="button" class="text-action" onclick="openShop()">Вернуться в магазин</button>
+        </div>
+    </div>
+
+    <script>
+    window.userAuthenticated = {{ user.is_authenticated|yesno:"true,false" }};
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

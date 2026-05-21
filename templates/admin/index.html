@@ -1,0 +1,13 @@
+{% extends "admin/index.html" %}
+
+{% block content %}
+<div id="content-main">
+    <div class="module" style="margin-bottom: 20px;">
+        <h2>Экспорт отчётов</h2>
+        <div class="form-row">
+            <a href="{% url 'export_report' %}" class="button" style="background: #79aec8; padding: 10px 15px; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">📊 Скачать отчёт XLSX</a>
+        </div>
+    </div>
+    {{ block.super }}
+</div>
+{% endblock %}

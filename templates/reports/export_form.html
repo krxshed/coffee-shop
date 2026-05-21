@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Экспорт отчёта в Excel</h1>
+<form method="post" id="reportForm">
+    {% csrf_token %}
+    {% for model in models %}
+    <div class="model-block" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+        <label style="font-weight: bold;">
+            <input type="checkbox" name="tables" value="{{ model.key }}" class="model-checkbox">
+            {{ model.verbose }}
+        </label>
+        <div class="fields-list" style="margin-left: 30px; margin-top: 8px; display: none;">
+            {% for field in model.fields %}
+            <label style="display: inline-block; margin-right: 15px;">
+                <input type="checkbox" name="fields" value="{{ model.key }}.{{ field.name }}">
+                {{ field.verbose }}
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+    <div style="margin-top: 20px;">
+        <button type="submit" class="button">Скачать XLSX</button>
+    </div>
+</form>
+
+<script>
+    document.querySelectorAll('.model-checkbox').forEach(cb => {
+        cb.addEventListener('change', function () {
+            const fieldsDiv = this.closest('.model-block').querySelector('.fields-list');
+            fieldsDiv.style.display = this.checked ? 'block' : 'none';
+        });
+    });
+</script>
+{% endblock %}

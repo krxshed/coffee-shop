@@ -1,0 +1,884 @@
+﻿[
+    {
+        "model": "products.coffeetype",
+        "pk": 1,
+        "fields": {
+            "name": "Arabica",
+            "description": "Король кофейного мира! Нежные цветочные и фруктовые ноты, бархатная текстура и изысканный аромат. Идеален для ценителей утонченного вкуса и долгого послевкусия.",
+            "small_cup": "images/cup-arabica-small.png",
+            "big_cup": "images/cup-arabica-big.png",
+            "stock": 18,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.coffeetype",
+        "pk": 2,
+        "fields": {
+            "name": "Robusta",
+            "description": "ЗАРЯД ЭНЕРГИИ! Мощный, насыщенный кофе с высокой крепостью и плотной пенкой. Идеален для любителей крепкого эспрессо и тех, кто ценит бодрящий эффект.",
+            "small_cup": "images/cup-robusta-small.png",
+            "big_cup": "images/cup-robusta-big.png",
+            "stock": 20,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.coffeetype",
+        "pk": 3,
+        "fields": {
+            "name": "Liberica",
+            "description": "ЭКСКЛЮЗИВ ДЛЯ ИСКАТЕЛЕЙ РЕДКОСТЕЙ! Уникальный кофе с дымными, тропическими и древесными нотами. Для тех, кто устал от обычного и хочет попробовать нечто особенное.",
+            "small_cup": "images/cup-liberica-small.png",
+            "big_cup": "images/cup-liberica-big.png",
+            "stock": 8,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.coffeetype",
+        "pk": 4,
+        "fields": {
+            "name": "Смесь",
+            "description": "ИДЕАЛЬНЫЙ БАЛАНС ДЛЯ КАЖДОГО ДНЯ! Тщательно подобранный купаж, сочетающий лучшие качества разных сортов. Надежный выбор для тех, кто ценит стабильность и гармонию во вкусе.",
+            "small_cup": "images/cup-mix-small.png",
+            "big_cup": "images/cup-mix-big.png",
+            "stock": 25,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.processingtype",
+        "pk": 1,
+        "fields": {
+            "name": "grain",
+            "label": "Зерно",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.processingtype",
+        "pk": 2,
+        "fields": {
+            "name": "ground",
+            "label": "Молотый",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.processingtype",
+        "pk": 3,
+        "fields": {
+            "name": "instant",
+            "label": "Растворимый",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 1,
+        "fields": {
+            "name": "light",
+            "label": "Светлая обжарка",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 2,
+        "fields": {
+            "name": "medium",
+            "label": "Средняя обжарка",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 3,
+        "fields": {
+            "name": "dark",
+            "label": "Темная обжарка",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 4,
+        "fields": {
+            "name": "coarse",
+            "label": "Грубый помол",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 5,
+        "fields": {
+            "name": "fine",
+            "label": "Тонкий помол",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 6,
+        "fields": {
+            "name": "freeze",
+            "label": "Сублимированный",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 7,
+        "fields": {
+            "name": "powder",
+            "label": "Порошковый",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.roastlevel",
+        "pk": 8,
+        "fields": {
+            "name": "extra",
+            "label": "Экстра крепкий",
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 1,
+            "roast_level": 1,
+            "title": "Эфиопия Йиргачефф. Утренний цветок",
+            "subtitle": "Утренний цветок",
+            "description": "Легкая обжарка раскрывает нежный цветочно-ягодный профиль. Яркие ноты жасмина, черники и лимона. Идеален для альтернативных способов заваривания (пуровер, аэропресс).",
+            "price_250": 550,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1900,
+            "image": "images/product-arabica-light.png",
+            "stock": 12,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 2,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 1,
+            "roast_level": 2,
+            "title": "Колумбия Нариньо. Классический баланс",
+            "subtitle": "Классический баланс",
+            "description": "Универсальная обжарка. Ноты молочного шоколада, красного яблока и ореховой сладостью. Подходит для эспрессо и капучино.",
+            "price_250": 500,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1700,
+            "image": "images/product-arabica-medium.png",
+            "stock": 14,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 3,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 1,
+            "roast_level": 3,
+            "title": "Бразилия Сантос. Интенсивный эспрессо",
+            "subtitle": "Интенсивный эспрессо",
+            "description": "Глубокая темная обжарка. Ноты горького шоколада, жженого сахара и миндаля. Низкая кислотность, плотное тело.",
+            "price_250": 480,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1600,
+            "image": "images/product-arabica-dark.png",
+            "stock": 10,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 2,
+            "roast_level": 4,
+            "title": "Гватемала Антигуа. Для френч-пресса",
+            "subtitle": "Для френч-пресса",
+            "description": "Средняя обжарка, грубый помол. Ноты молочного шоколада, карамели и легкой пряности.",
+            "price_250": 450,
+            "price_500": 950,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-arabica-ground-coarse.png",
+            "stock": 11,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 2,
+            "roast_level": 2,
+            "title": "Коста-Рика Тарразу. Для фильтр-кофе",
+            "subtitle": "Для фильтр-кофе",
+            "description": "Средний помол. Нотки апельсиновой цедры, меда и коричневого сахара.",
+            "price_250": 470,
+            "price_500": 0,
+            "price_750": 1200,
+            "price_1000": 0,
+            "image": "images/product-arabica-ground-medium.png",
+            "stock": 9,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 2,
+            "roast_level": 5,
+            "title": "Итальянская классика. Эспрессо помол",
+            "subtitle": "Эспрессо помол",
+            "description": "Мелкий помол для эспрессо и турки. Вкус шоколада и спеченой груши.",
+            "price_250": 490,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1650,
+            "image": "images/product-arabica-ground-fine.png",
+            "stock": 12,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 3,
+            "roast_level": 6,
+            "title": "Arabica Premium. Сублимированный",
+            "subtitle": "Сублимированный",
+            "description": "Качественный сублимированный кофе из 100% арабики.",
+            "price_250": 450,
+            "price_500": 800,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-arabica-instant1.png",
+            "stock": 20,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 3,
+            "roast_level": 7,
+            "title": "Мягкое утро. Растворимый порошковый",
+            "subtitle": "Растворимый",
+            "description": "Традиционный порошковый растворимый кофе.",
+            "price_250": 300,
+            "price_500": 550,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-arabica-instant2.png",
+            "stock": 18,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "coffee_type": 1,
+            "processing": 3,
+            "roast_level": 8,
+            "title": "Двойной заряд. Сублимированный крепкий",
+            "subtitle": "Экстра крепкий",
+            "description": "Сильно концентрированный сублимированный кофе.",
+            "price_250": 400,
+            "price_500": 750,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-arabica-instant3.png",
+            "stock": 16,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 10,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 1,
+            "roast_level": 1,
+            "title": "Уганда. Необработанная крепость",
+            "subtitle": "Необработанная крепость",
+            "description": "Светлая обжарка для робусты — зерновой, древесный вкус.",
+            "price_250": 350,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1100,
+            "image": "images/product-robusta-light.png",
+            "stock": 10,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 11,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 1,
+            "roast_level": 2,
+            "title": "Вьетнам Премиум. Классическая робуста",
+            "subtitle": "Классическая робуста",
+            "description": "Ореховый, нотки темного шоколада.",
+            "price_250": 330,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1050,
+            "image": "images/product-robusta-medium.png",
+            "stock": 12,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 12,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 1,
+            "roast_level": 3,
+            "title": "Индия Черри. Для эспрессо",
+            "subtitle": "Для итальянского эспрессо",
+            "description": "Темная, почти маслянистая обжарка.",
+            "price_250": 340,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1080,
+            "image": "images/product-robusta-dark.png",
+            "stock": 8,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 13,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 2,
+            "roast_level": 4,
+            "title": "Восточная крепость. Для френч-пресса",
+            "subtitle": "Для френч-пресса",
+            "description": "Мощный грубый помол для френч-пресса.",
+            "price_250": 320,
+            "price_500": 700,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-robusta-ground-coarse.png",
+            "stock": 14,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 14,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 2,
+            "roast_level": 2,
+            "title": "Традиционный крепкий. Для фильтра",
+            "subtitle": "Для фильтра",
+            "description": "Средний помол — надежный, прямолинейный.",
+            "price_250": 330,
+            "price_500": 0,
+            "price_750": 850,
+            "price_1000": 0,
+            "image": "images/product-robusta-ground-medium.png",
+            "stock": 16,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 15,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 2,
+            "roast_level": 5,
+            "title": "Крема Экспресс. Для турки и эспрессо",
+            "subtitle": "Тонкий помол",
+            "description": "Тонкий помол для густой пенки.",
+            "price_250": 340,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1100,
+            "image": "images/product-robusta-ground-fine.png",
+            "stock": 9,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 16,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 3,
+            "roast_level": 6,
+            "title": "Robusta Gold. Сублимированный",
+            "subtitle": "Сублимированный",
+            "description": "Сильно насыщенный сублимированный продукт.",
+            "price_250": 380,
+            "price_500": 700,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-robusta-instant1.png",
+            "stock": 12,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 17,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 3,
+            "roast_level": 7,
+            "title": "Эконом-формат. Растворимый",
+            "subtitle": "Порошковый растворимый",
+            "description": "Бюджетный растворимый кофе.",
+            "price_250": 220,
+            "price_500": 650,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-robusta-instant2.png",
+            "stock": 18,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 18,
+        "fields": {
+            "coffee_type": 2,
+            "processing": 3,
+            "roast_level": 8,
+            "title": "MAXIMUM. Порошковый экстра крепкий",
+            "subtitle": "Экстра крепкий",
+            "description": "Концентрированный порошковый кофе.",
+            "price_250": 250,
+            "price_500": 450,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-robusta-instant3.png",
+            "stock": 10,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 19,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 1,
+            "roast_level": 1,
+            "title": "Филиппины Barako. Экзотик Лайт",
+            "subtitle": "Экзотик Лайт",
+            "description": "Редкая светлая обжарка либерики.",
+            "price_250": 1200,
+            "price_500": 2800,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-light.png",
+            "stock": 3,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 20,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 1,
+            "roast_level": 2,
+            "title": "Малайзия. Тропический лес",
+            "subtitle": "Тропический лес",
+            "description": "Средняя обжарка, сложный профиль.",
+            "price_250": 1100,
+            "price_500": 2600,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-medium.png",
+            "stock": 4,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 21,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 1,
+            "roast_level": 3,
+            "title": "Африканская легенда. Темная обжарка",
+            "subtitle": "Темная обжарка",
+            "description": "Темная обжарка — копченые и шоколадные ноты.",
+            "price_250": 1150,
+            "price_500": 2700,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-dark.png",
+            "stock": 2,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 22,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 2,
+            "roast_level": 4,
+            "title": "Liberica Barako. Для френч-пресса",
+            "subtitle": "Для френч-пресса",
+            "description": "Грубый помол для барако.",
+            "price_250": 1050,
+            "price_500": 1900,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-ground-coarse.png",
+            "stock": 5,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 23,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 2,
+            "roast_level": 2,
+            "title": "Редкий урожай. Для фильтр-кофе",
+            "subtitle": "Для фильтр-кофе",
+            "description": "Средний помол, тропические ноты.",
+            "price_250": 1100,
+            "price_500": 2300,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-ground-medium.png",
+            "stock": 4,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 24,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 2,
+            "roast_level": 5,
+            "title": "Восточная тайна. Для турки",
+            "subtitle": "Для турки",
+            "description": "Тонкий помол для джезве.",
+            "price_250": 950,
+            "price_500": 2100,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-ground-fine.png",
+            "stock": 3,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 25,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 3,
+            "roast_level": 6,
+            "title": "Liberica Exclusive. Сублимированный",
+            "subtitle": "Сублимированный",
+            "description": "Эксклюзивный сублимированный либерика.",
+            "price_250": 900,
+            "price_500": 1700,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-instant1.png",
+            "stock": 2,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 26,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 3,
+            "roast_level": 7,
+            "title": "Тропический микс. С либерикой",
+            "subtitle": "Порошковый",
+            "description": "Порошковый растворимый микс.",
+            "price_250": 650,
+            "price_500": 1200,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-instant2.png",
+            "stock": 4,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 27,
+        "fields": {
+            "coffee_type": 3,
+            "processing": 3,
+            "roast_level": 8,
+            "title": "Barako Boost. Экстракт с либерикой",
+            "subtitle": "Экстра крепкий",
+            "description": "Концентрированный экстракт.",
+            "price_250": 1100,
+            "price_500": 2000,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-liberica-instant3.png",
+            "stock": 1,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 28,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 1,
+            "roast_level": 1,
+            "title": "Эфиопско-Кенийский дуэт",
+            "subtitle": "Эфиопско-Кенийский дуэт",
+            "description": "Купаж светлой обжарки, фруктовый профиль.",
+            "price_250": 520,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1750,
+            "image": "images/product-mix-light.png",
+            "stock": 6,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 29,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 1,
+            "roast_level": 2,
+            "title": "Маэстро. Универсальная смесь",
+            "subtitle": "Маэстро",
+            "description": "Бестселлер — сбалансированная смесь.",
+            "price_250": 480,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1600,
+            "image": "images/product-mix-medium.png",
+            "stock": 10,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 30,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 1,
+            "roast_level": 3,
+            "title": "Римская ночь. Итальянская смесь",
+            "subtitle": "Римская ночь",
+            "description": "Темная итальянская смесь.",
+            "price_250": 460,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1550,
+            "image": "images/product-mix-dark.png",
+            "stock": 9,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 31,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 2,
+            "roast_level": 4,
+            "title": "Завтрак у озера. Смесь для френч-пресса",
+            "subtitle": "Завтрак у озера",
+            "description": "Грубый помол для френч-пресса.",
+            "price_250": 430,
+            "price_500": 900,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-mix-ground-coarse.png",
+            "stock": 8,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 32,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 2,
+            "roast_level": 2,
+            "title": "Офисный день. Для капельной кофеварки",
+            "subtitle": "Офисный день",
+            "description": "Средний помол для офиса.",
+            "price_250": 450,
+            "price_500": 0,
+            "price_750": 1150,
+            "price_1000": 0,
+            "image": "images/product-mix-ground-medium.png",
+            "stock": 10,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 33,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 2,
+            "roast_level": 5,
+            "title": "Cremoso. Эспрессо смесь",
+            "subtitle": "Cremoso",
+            "description": "Тонкий помол для эспрессо.",
+            "price_250": 470,
+            "price_500": 0,
+            "price_750": 0,
+            "price_1000": 1580,
+            "image": "images/product-mix-ground-fine.png",
+            "stock": 7,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 34,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 3,
+            "roast_level": 6,
+            "title": "Barista's Choice. Сублимированный бленд",
+            "subtitle": "Barista's Choice",
+            "description": "Премиум сублимированный бленд.",
+            "price_250": 420,
+            "price_500": 750,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-mix-instant1.png",
+            "stock": 11,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 35,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 3,
+            "roast_level": 7,
+            "title": "Сытный полдник. 3 в 1",
+            "subtitle": "3 в 1",
+            "description": "Удобный формат 'всё в одном'.",
+            "price_250": 280,
+            "price_500": 500,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-mix-instant2.png",
+            "stock": 15,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 36,
+        "fields": {
+            "coffee_type": 4,
+            "processing": 3,
+            "roast_level": 8,
+            "title": "Espresso Instant. Крепкий сублимированный",
+            "subtitle": "Espresso Instant",
+            "description": "Крепкий сублимированный продукт.",
+            "price_250": 400,
+            "price_500": 720,
+            "price_750": 0,
+            "price_1000": 0,
+            "image": "images/product-mix-instant3.png",
+            "stock": 13,
+            "created_at": "2025-05-19T12:00:00Z",
+            "updated_at": "2025-05-19T12:00:00Z"
+        }
+    }
+]

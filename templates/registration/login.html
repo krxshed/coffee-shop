@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Дополнительные стили для адаптации под телефоны */
+        @media (max-width: 600px) {
+            .auth-container {
+                width: 90% !important;
+                margin: 50px auto !important;
+                padding: 20px !important;
+            }
+
+                .auth-container h2 {
+                    font-size: 32px !important;
+                }
+
+                .auth-container input {
+                    font-size: 18px !important;
+                    padding: 12px !important;
+                }
+
+                .auth-container button {
+                    font-size: 20px !important;
+                    padding: 12px 20px !important;
+                }
+
+                .auth-container p, .auth-container a {
+                    font-size: 16px !important;
+                }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container" style="max-width: 400px; margin: 100px auto; text-align: center;">
+        <h2>Вход</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="text-action">Войти</button>
+        </form>
+        <p>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a></p>
+        <p><a href="{% url 'home' %}">Вернуться на главную</a></p>
+    </div>
+</body>
+</html>

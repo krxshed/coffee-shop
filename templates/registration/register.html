@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        /* Общие стили для формы (как было) */
+        .errorlist {
+            color: #cc0000;
+            font-size: 12px;
+            margin-top: 4px;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        input {
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+        /* Адаптация для телефонов */
+        @media (max-width: 600px) {
+            .register-container {
+                width: 90% !important;
+                margin: 40px auto !important;
+                padding: 20px !important;
+            }
+
+                .register-container h2 {
+                    font-size: 32px !important;
+                }
+
+                .register-container input {
+                    font-size: 18px !important;
+                    padding: 12px !important;
+                }
+
+                .register-container button {
+                    font-size: 20px !important;
+                    padding: 12px 20px !important;
+                }
+
+                .register-container p, .register-container a {
+                    font-size: 16px !important;
+                }
+
+            .errorlist li {
+                font-size: 14px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container" style="max-width: 400px; margin: 100px auto; text-align: center;">
+        <h2>Регистрация</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+                {% if form.username.errors %}
+                <ul class="errorlist">
+                    {% for error in form.username.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password1.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                <ul class="errorlist">
+                    {% for error in form.password2.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <button type="submit" class="text-action">Зарегистрироваться</button>
+        </form>
+        <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+        <p><a href="{% url 'home' %}">Вернуться на главную</a></p>
+    </div>
+</body>
+</html>
