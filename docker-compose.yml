@@ -1,4 +1,3 @@
-
 services:
   db:
     image: postgres:15
@@ -20,7 +19,6 @@ services:
   web:
     build: .
     container_name: coffee_web
-    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
