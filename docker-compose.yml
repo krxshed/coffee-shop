@@ -20,7 +20,7 @@ services:
     build: .
     container_name: coffee_web
     volumes:
-      - .:/app
+       - .:/app
     ports:
       - "8000:8000"
     depends_on:
